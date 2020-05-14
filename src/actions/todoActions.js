@@ -10,3 +10,14 @@ export const addTodo = todo => dispatch => {
       });
     });
 };
+
+export const SET_TODOS = 'SET_TODOS';
+export const setTodos = () => dispatch => {
+  return fetchTodos()
+    .then(todos => {
+      dispatch({
+        type: SET_TODOS,
+        payload: todos
+      });
+    });
+};
